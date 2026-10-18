@@ -317,6 +317,17 @@ export function DesktopNav() {
 
         <Link
           prefetch={false}
+          href="/plan"
+          className={cn(
+            "hover:text-foreground/80 transition-colors",
+            pathname === "/plan" ? "text-foreground" : "text-foreground/60",
+          )}
+        >
+          Plan
+        </Link>
+
+        <Link
+          prefetch={false}
           href="/gym-playlist-leaderboard"
           className={cn(
             "hover:text-foreground/80 transition-colors",
