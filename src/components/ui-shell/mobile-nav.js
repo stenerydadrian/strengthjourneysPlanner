@@ -7,7 +7,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { House, Megaphone, Menu } from "lucide-react";
+import { ClipboardList, House, Megaphone, Menu } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { ThemeChooser } from "@/components/ui-shell/theme-chooser";
@@ -180,6 +180,14 @@ export function MobileNav() {
                             : item.title
                         }
                       />
+                      {/* Desktop exposes Plan as a top-level route; mirror it on mobile. */}
+                      {item.href === "/log" && (
+                        <NavLink
+                          href="/plan"
+                          title="Plan"
+                          IconComponent={ClipboardList}
+                        />
+                      )}
                       {item.href === "/log" && liftExplorer && (
                         <div className="flex flex-col gap-3">
                           <NavLink {...liftExplorer} />
